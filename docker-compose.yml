@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+    web:
+        container_name: pokeleague-web
+        image: node:alpine
+        ports:
+            - 8000:8000
+        working_dir: /srv/app
+        volumes:
+            - ../pokeleague.web:/srv/app
+        tty: true
+        command: sh -c "npm i && npm run dev"
